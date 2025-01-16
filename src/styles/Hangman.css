@@ -7,8 +7,8 @@ body {
     #7fb7be,
     #d2f3ee
   ); /* Soft pastel gradient */
-  background-size: cover; /* Ensure the gradient covers the entire viewport */
-  min-height: 100vh; /* Make sure it fills the viewport height */
+  background-size: cover; /* Ensure gradient covers the entire viewport */
+  min-height: 100vh; /* Fill viewport height */
   color: #333;
   text-align: center;
   display: flex;
@@ -17,11 +17,11 @@ body {
   align-items: center;
 }
 
-/* Hangman container centered properly */
+/* Hangman container */
 .hangman-container {
   padding: 20px;
   width: 100%;
-  max-width: 800px; /* Limit the width for better layout */
+  max-width: 800px; /* Limit container width */
   box-sizing: border-box;
 }
 
@@ -54,24 +54,26 @@ h1 {
   color: #28a745;
 }
 
-/* Hangman image styling with rounded edges */
+/* Hangman image */
 .hangman-image {
   margin-top: 20px;
-  width: 200px;
+  width: 100%;
+  max-width: 200px; /* Limit image size */
   height: auto;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Word container styling */
+/* Word container */
 .word-container {
-  font-size: 28px;
+  font-size: 24px;
   margin: 20px 0;
   text-transform: uppercase;
   letter-spacing: 5px;
+  word-break: break-word; /* Handle long words */
 }
 
-/* Feedback message styling */
+/* Feedback message */
 .feedback {
   font-size: 20px;
   font-weight: bold;
@@ -91,6 +93,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap; /* Wrap buttons for smaller screens */
 }
 
 .letter-button {
@@ -98,9 +101,9 @@ h1 {
   color: #333;
   border: 2px solid #007bff;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 12px 18px;
+  padding: 10px 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -121,31 +124,24 @@ h1 {
   box-shadow: none;
 }
 
-.letter-button.used {
-  background-color: #ccc;
-  color: #666;
-  border-color: #999;
-}
-
-/* General container for buttons */
+/* Buttons (Restart and Help) */
 .button-container {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
 }
 
-/* Restart and Help buttons */
 .restart-button,
 .help-button {
   background-color: #ff5722;
   color: white;
   border: none;
   padding: 12px 20px;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .restart-button:hover,
@@ -154,7 +150,7 @@ h1 {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Help popup styling */
+/* Help popup */
 .help-popup {
   position: fixed;
   top: 30%;
@@ -195,5 +191,26 @@ h1 {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .hangman-container {
+    max-width: 320px; /* Adjust container size for smaller screens */
+  }
+
+  .word-container {
+    font-size: 20px; /* Reduce font size */
+  }
+
+  .letter-button {
+    font-size: 14px;
+    padding: 8px 10px; /* Adjust button size */
+  }
+
+  .game-over,
+  .victory {
+    font-size: 1.2rem; /* Adjust message size */
   }
 }

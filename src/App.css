@@ -1,17 +1,96 @@
-.App {
+/* General body and container styles */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #d9a7c7,
+    #fffcdc
+  ); /* Soft pastel gradient */
+  color: #333;
   text-align: center;
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure full viewport height */
+  padding: 0 10px; /* Add padding for smaller screens */
 }
 
+/* App container */
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Hangman image */
 .hangman-image {
-  width: 300px; /* Adjust this size as needed */
+  width: 300px; /* Responsive image size */
   height: auto;
   margin-top: 20px;
+  border-radius: 10px; /* Add rounded corners for a modern look */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
-/* src/App.css */
 
-.App {
-  text-align: center;
-  padding: 20px;
+/* Global button styling */
+button {
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  border: none;
+  color: white;
+}
+
+/* Restart and Help Buttons */
+.restart-button,
+.help-button {
+  background-color: #ff5722; /* Bright orange for buttons */
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-button:hover,
+.help-button:hover {
+  background-color: #e64a19; /* Darker shade on hover */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add hover shadow */
+}
+
+/* Header styling */
+.header {
+  font-size: 2rem;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffcccc;
+  color: #ed0202;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 0 5px; /* Reduce padding on smaller screens */
+  }
+
+  .header {
+    font-size: 1.5rem; /* Reduce font size on smaller screens */
+    padding: 8px;
+  }
+
+  .hangman-image {
+    width: 200px; /* Adjust image size for mobile */
+  }
+
+  button {
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px 12px; /* Adjust button padding */
+  }
 }
