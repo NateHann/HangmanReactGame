@@ -1,6 +1,7 @@
 # Hangman Game
 
 Welcome to the Hangman game! This is a modern, interactive, and visually appealing version of the classic Hangman game built with React.
+Follow the link to play https://evening-oasis-79944-d4724b4f019e.herokuapp.com/
 
 ## Features
 
@@ -80,5 +81,4 @@ src/
 This project is licensed under the MIT License. Feel free to use and modify it as you wish.
 
 ---
-
 Enjoy the game!
