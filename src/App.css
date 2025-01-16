@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.hangman-image {
+  width: 300px; /* Adjust this size as needed */
+  height: auto;
+  margin-top: 20px;
+}
+/* src/App.css */
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
