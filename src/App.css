@@ -21,7 +21,6 @@ body {
 .App {
   text-align: center;
   padding: 20px;
-  font-family: "Arial", sans-serif;
 }
 
 /* Hangman image */
@@ -74,10 +73,70 @@ button {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Media Queries for Responsiveness */
+/* Word container styling */
+.word-container {
+  font-size: 24px;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  word-break: break-word; /* Handle long words */
+}
+
+/* Feedback message styling */
+.feedback {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Keyboard styling */
+.letters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap; /* Wrap buttons for smaller screens */
+}
+
+.letter-button {
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.letter-button:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.letter-button:disabled {
+  background-color: #d3d3d3;
+  color: #999;
+  border-color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive media queries */
 @media (max-width: 768px) {
   body {
-    padding: 0 5px; /* Reduce padding on smaller screens */
+    padding: 0 5px; /* Reduce padding for smaller screens */
   }
 
   .header {
@@ -86,11 +145,34 @@ button {
   }
 
   .hangman-image {
-    width: 200px; /* Adjust image size for mobile */
+    width: 200px; /* Adjust image size for smaller screens */
   }
 
-  button {
-    font-size: 14px; /* Reduce button font size */
-    padding: 8px 12px; /* Adjust button padding */
+  .word-container {
+    font-size: 20px; /* Reduce font size */
+  }
+
+  .letters {
+    gap: 8px; /* Reduce spacing between rows */
+  }
+
+  .keyboard-row {
+    gap: 5px; /* Reduce spacing between buttons */
+  }
+
+  .letter-button {
+    font-size: 14px; /* Adjust button font size */
+    padding: 8px 10px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .keyboard-row {
+    justify-content: space-between; /* Spread buttons to fit the row */
+  }
+
+  .letter-button {
+    font-size: 12px; /* Further reduce font size */
+    padding: 6px 8px; /* Adjust padding for small screens */
   }
 }
